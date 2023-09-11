@@ -1,4 +1,6 @@
-﻿using System.Runtime.Intrinsics.X86;
+﻿using projeto_final_bloco_01.Model;
+using projeto_final_bloco_01.Controller;
+using System.Runtime.Intrinsics.X86;
 
 namespace projeto_final_bloco_01
 {
@@ -13,7 +15,7 @@ namespace projeto_final_bloco_01
             string? nome, marca;
             decimal preco;
 
-            ProdutoController produto = new();
+            ProdutoControler produto = new();
 
             while (opcao != 6)
             {
@@ -74,7 +76,7 @@ namespace projeto_final_bloco_01
                         Console.WriteLine("Digite a marca do Produto: ");
                         marca = Console.ReadLine();
 
-                        produto.CriarProduto(new ssd(id, nome, marca, preco));
+                        produto.CriarProduto(new Ssd(id, nome, preco, marca));
 
 
                         KeyPress();
@@ -128,9 +130,9 @@ namespace projeto_final_bloco_01
 
                             Console.WriteLine("Digite a marca do Produto: ");
                             marca = Console.ReadLine();
-                            produto.AtualizarProduto(new ssd(id, nome, marca, preco));
+                            produto.AtualizarProduto(new Ssd(id, nome, preco, marca));
 
-                           
+
                         }
                         else
                         {
